@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSetoresTable extends Migration
+class CreateSegmentosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class CreateSetoresTable extends Migration
      */
     public function up()
     {
-        Schema::create('setores', function (Blueprint $table) {
+        Schema::create('segmentos', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('subsetor_id');
             $table->string('nome', 64)->unique();
             $table->unsignedInteger('created_by');
             $table->unsignedInteger('updated_by');
@@ -32,6 +33,6 @@ class CreateSetoresTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('setores');
+        Schema::dropIfExists('segmentos');
     }
 }

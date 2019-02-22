@@ -10,6 +10,6 @@ class Setor extends Model
 
     public function subsetores()
     {
-        return $this->hasMany('App\Subsetor');
+        return $this->hasMany('App\Models\Subsetor');
     }
 }

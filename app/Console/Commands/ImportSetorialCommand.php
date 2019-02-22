@@ -4,10 +4,10 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 
-use App\Domain\Models\Empresa;
-use App\Domain\Models\Setor;
-use App\Domain\Models\Subsetor;
-use App\Domain\Models\Segmento;
+use App\Models\Empresa;
+use App\Models\Setor;
+use App\Models\Subsetor;
+use App\Models\Segmento;
 
 class ImportSetorialCommand extends Command
 {

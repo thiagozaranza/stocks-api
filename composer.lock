@@ -372,15 +372,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/thiagozaranza/funceme-api.git",
-                "reference": "303dbee3b143374dc4563e95cdbe5509413e3884"
+                "reference": "00f1f7dba6bde2b526e5cc1109bd55c73c24884a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thiagozaranza/funceme-api/zipball/303dbee3b143374dc4563e95cdbe5509413e3884",
-                "reference": "303dbee3b143374dc4563e95cdbe5509413e3884",
+                "url": "https://api.github.com/repos/thiagozaranza/funceme-api/zipball/00f1f7dba6bde2b526e5cc1109bd55c73c24884a",
+                "reference": "00f1f7dba6bde2b526e5cc1109bd55c73c24884a",
                 "shasum": ""
             },
             "require": {
+                "predis/predis": "^1.1",
                 "sofa/eloquence": "5.5.*",
                 "spatie/laravel-permission": "^2.23"
             },
@@ -404,7 +405,7 @@
                 }
             ],
             "description": "Api restfull com implementação de authentication, authorization e cache",
-            "time": "2019-02-22T15:47:05+00:00"
+            "time": "2019-02-22T19:22:32+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",

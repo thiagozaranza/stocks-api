@@ -10,6 +10,6 @@ class Empresa extends Model
 
     public function segmento()
     {
-        return $this->belongsTo('App\Domain\Segmento');
+        return $this->belongsTo('App\Models\Segmento');
     }
 }

@@ -10,11 +10,11 @@ class Subsetor extends Model
     
     public function setor()
     {
-        return $this->belongsTo('App\Setor');
+        return $this->belongsTo('App\Models\Setor');
     }
 
     public function segmentos()
     {
-        return $this->hasMany('App\Segmento');
+        return $this->hasMany('App\Models\Segmento');
     }
 }

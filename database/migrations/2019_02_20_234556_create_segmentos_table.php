@@ -16,9 +16,9 @@ class CreateSegmentosTable extends Migration
         Schema::create('segmentos', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('subsetor_id');
-            $table->string('nome', 64)->unique();
-            $table->unsignedInteger('created_by');
-            $table->unsignedInteger('updated_by');
+            $table->string('nome', 64);
+            $table->unsignedInteger('created_by')->nullable();;
+            $table->unsignedInteger('updated_by')->nullable();;
             $table->timestamps();
 
             $table->foreign('created_by')->references('id')->on('users');

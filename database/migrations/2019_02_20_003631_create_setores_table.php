@@ -16,8 +16,8 @@ class CreateSetoresTable extends Migration
         Schema::create('setores', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nome', 64)->unique();
-            $table->unsignedInteger('created_by');
-            $table->unsignedInteger('updated_by');
+            $table->unsignedInteger('created_by')->nullable();;
+            $table->unsignedInteger('updated_by')->nullable();;
             $table->timestamps();
 
             $table->foreign('created_by')->references('id')->on('users');

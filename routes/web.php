@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::prefix('rest')->group(function () {
+    Route::resource('empresa', 'Rest\\EmpresaController');
+});

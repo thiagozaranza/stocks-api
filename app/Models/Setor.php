@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Domain\Models;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -10,6 +10,6 @@ class Setor extends Model
 
     public function subsetores()
     {
-        return $this->hasMany('App\Domain\Subsetor');
+        return $this->hasMany('App\Subsetor');
     }
 }

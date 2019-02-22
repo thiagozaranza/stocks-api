@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Domain\Models;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -10,6 +10,6 @@ class Segmento extends Model
 
     public function subsetor()
     {
-        return $this->belongsTo('App\Domain\Subsetor');
+        return $this->belongsTo('App\Subsetor');
     }
 }

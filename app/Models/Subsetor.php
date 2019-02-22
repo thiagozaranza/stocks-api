@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Domain\Models;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -10,11 +10,11 @@ class Subsetor extends Model
     
     public function setor()
     {
-        return $this->belongsTo('App\Domain\Setor');
+        return $this->belongsTo('App\Setor');
     }
 
     public function segmentos()
     {
-        return $this->hasMany('App\Domain\Segmento');
+        return $this->hasMany('App\Segmento');
     }
 }

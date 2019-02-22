@@ -12,4 +12,9 @@ class Segmento extends Model
     {
         return $this->belongsTo('App\Subsetor');
     }
+
+    public function empresas()
+    {
+        return $this->hasMany('App\Domain\Empresa');
+    }
 }

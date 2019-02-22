@@ -16,9 +16,9 @@ class CreateSubsetoresTable extends Migration
         Schema::create('subsetores', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('setor_id');
-            $table->string('nome', 64)->unique();
-            $table->unsignedInteger('created_by');
-            $table->unsignedInteger('updated_by');
+            $table->string('nome', 64);
+            $table->unsignedInteger('created_by')->nullable();;
+            $table->unsignedInteger('updated_by')->nullable();;
             $table->timestamps();
 
             $table->foreign('setor_id')->references('id')->on('setores');

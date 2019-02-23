@@ -16,5 +16,8 @@ Route::get('/', function () {
 });
 
 Route::prefix('rest')->group(function () {
-    Route::resource('empresa', 'Rest\\EmpresaController');
+    Route::resource('empresa',  'Rest\\EmpresaController');
+    Route::resource('setor',    'Rest\\SetorController');
+    Route::resource('subsetor', 'Rest\\SubsetorController');
+    Route::resource('segmento', 'Rest\\SegmentoController');
 });

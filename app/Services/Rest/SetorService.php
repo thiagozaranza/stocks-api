@@ -4,5 +4,7 @@ namespace App\Services\Rest;
 
 use Funceme\RestfullApi\Services\BaseRestService;
 
-class EmpresaService extends BaseRestService
-{}
+class SetorService extends BaseRestService
+{
+    
+}

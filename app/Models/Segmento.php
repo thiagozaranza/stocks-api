@@ -8,6 +8,8 @@ class Segmento extends Model
 {
     protected $table = 'segmentos';
 
+    public $fillable = ['nome', 'subsetor_id'];
+
     public function subsetor()
     {
         return $this->belongsTo('App\Models\Subsetor');

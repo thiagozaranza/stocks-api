@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Subsetor extends Model
 {
     protected $table = 'subsetores';
+
+    public $fillable = ['nome', 'setor_id'];
     
     public function setor()
     {

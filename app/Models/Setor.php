@@ -8,6 +8,8 @@ class Setor extends Model
 {
     protected $table = 'setores';
 
+    public $fillable = ['nome'];
+
     public function subsetores()
     {
         return $this->hasMany('App\Models\Subsetor');

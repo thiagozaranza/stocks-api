@@ -7,7 +7,6 @@ use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
 use App\Console\Commands\ImportSetorialCommand;
 use App\Console\Commands\CacheCleanCommand;
-use App\Console\Commands\CreateCommand;
 
 class Kernel extends ConsoleKernel
 {
@@ -19,7 +18,6 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         ImportSetorialCommand::class,
         CacheCleanCommand::class,
-        CreateCommand::class
     ];
 
     /**

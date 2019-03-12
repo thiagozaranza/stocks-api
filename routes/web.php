@@ -16,8 +16,13 @@ Route::get('/', function () {
 });
 
 Route::prefix('rest')->group(function () {
+    Route::resource('user',     'Rest\\UserController');
     Route::resource('empresa',  'Rest\\EmpresaController');
     Route::resource('setor',    'Rest\\SetorController');
     Route::resource('subsetor', 'Rest\\SubsetorController');
     Route::resource('segmento', 'Rest\\SegmentoController');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

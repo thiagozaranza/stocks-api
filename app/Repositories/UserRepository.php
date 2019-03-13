@@ -2,7 +2,7 @@
 namespace App\Repositories;
 
 use Funceme\RestfullApi\Repositories\BaseRepository;
-use App\User;
+use App\Models\User;
 
 class UserRepository extends BaseRepository
 {

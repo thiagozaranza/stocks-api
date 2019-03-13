@@ -4,7 +4,7 @@ namespace App\Policies;
 
 use Funceme\RestfullApi\Policies\BasePolicy;
 
-class EmpresaPolicy extends BasePolicy
+class UserPolicy extends BasePolicy
 {
     
 }

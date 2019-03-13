@@ -6,6 +6,9 @@ use Laravel\Passport\Passport;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
+use App\Models\{Setor, Segmento, Subsetor, Empresa, User};
+use App\Policies\{SetorPolicy, SegmentoPolicy, SubsetorPolicy, EmpresaPolicy, UserPolicy};
+
 class AuthServiceProvider extends ServiceProvider
 {
     /**
@@ -14,7 +17,11 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        'App\Model' => 'App\Policies\ModelPolicy',
+        Setor::class                => SetorPolicy::class,
+        Segmento::class             => SegmentoPolicy::class,
+        Subsetor::class             => SubsetorPolicy::class,
+        Empresa::class              => EmpresaPolicy::class,
+        User::class                 => UserPolicy::class,
     ];
 
     /**
@@ -28,5 +35,6 @@ class AuthServiceProvider extends ServiceProvider
 
         Passport::routes(null, ['middleware' => [ \Barryvdh\Cors\HandleCors::class ]]);
 
+        Passport::enableImplicitGrant();
     }
 }

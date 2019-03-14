@@ -6,5 +6,5 @@ use Funceme\RestfullApi\Policies\BasePolicy;
 
 class UserPolicy extends BasePolicy
 {
-    
+
 }

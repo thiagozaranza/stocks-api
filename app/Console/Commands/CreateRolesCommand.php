@@ -34,8 +34,8 @@ class CreateRolesCommand extends Command
     public function handle()
     {
         $this->alert('roles:sync');
-/*
-        DB::statement("truncate public.acl_permissions CASCADE");
+
+        /*DB::statement("truncate public.acl_permissions CASCADE");
         DB::statement("truncate public.acl_roles CASCADE");
 
         Cache::forget('spatie.permission.cache');
@@ -80,11 +80,21 @@ class CreateRolesCommand extends Command
             $role->syncPermissions($role_permissions);
         }*/
 
-        $user = User::findOrFail(2);
+        $user = User::findOrFail(1);
 
-        if(!$user->hasRole('guest'))
+        $user->removeRole('super_admin');
+
+        if(!$user->hasRole('guest')) {
+            $this->info("Set guest role to user 1");
             $user->assignRole('guest');
+        } else {
+            $this->info("User 1 already had guest role.");
+        }
 
+        if ($user->can('Read App\\Models\\User'))
+            $this->info("Yes, he can");
+        else     
+            $this->info("No, he can't");
     }
 
     private function getPermissionsForRole(&$permissions, &$roles, $node)

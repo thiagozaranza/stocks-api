@@ -9,6 +9,7 @@ class Setor extends Model
     protected $table = 'setores';
 
     public $fillable = ['nome'];
+    public $hidden = ['created_at', 'created_by', 'updated_at', 'updated_by'];
 
     public function subsetores()
     {

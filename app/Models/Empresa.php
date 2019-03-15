@@ -23,6 +23,8 @@ class Empresa extends Model
         'atividade',	
         'data_constituicao',	
         'data_registro_cvm'];
+    
+    public $hidden = ['created_at', 'created_by', 'updated_at', 'updated_by'];
 
     public function segmento()
     {

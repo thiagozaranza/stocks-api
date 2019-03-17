@@ -6,8 +6,8 @@ use Laravel\Passport\Passport;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
-use App\Models\{Setor, Segmento, Subsetor, Empresa, User};
-use App\Policies\{SetorPolicy, SegmentoPolicy, SubsetorPolicy, EmpresaPolicy, UserPolicy};
+use App\Models\{Setor, Segmento, Subsetor, Empresa, User, Indice};
+use App\Policies\{SetorPolicy, SegmentoPolicy, SubsetorPolicy, EmpresaPolicy, UserPolicy, IndicePolicy};
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -22,6 +22,7 @@ class AuthServiceProvider extends ServiceProvider
         Subsetor::class             => SubsetorPolicy::class,
         Empresa::class              => EmpresaPolicy::class,
         User::class                 => UserPolicy::class,
+        Indice::class               => IndicePolicy::class,
     ];
 
     /**

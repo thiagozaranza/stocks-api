@@ -35,7 +35,7 @@ class CreateRolesCommand extends Command
     {
         $this->alert('roles:sync');
 
-        /*DB::statement("truncate public.acl_permissions CASCADE");
+        DB::statement("truncate public.acl_permissions CASCADE");
         DB::statement("truncate public.acl_roles CASCADE");
 
         Cache::forget('spatie.permission.cache');
@@ -78,7 +78,7 @@ class CreateRolesCommand extends Command
             }
 
             $role->syncPermissions($role_permissions);
-        }*/
+        }
 
         $user = User::findOrFail(1);
 

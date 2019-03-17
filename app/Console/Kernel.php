@@ -6,6 +6,8 @@ use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
 use App\Console\Commands\ImportSetorialCommand;
+use App\Console\Commands\ImportIndicesCommand;
+use App\Console\Commands\ImportEmpresasIndicesCommand;
 use App\Console\Commands\CacheCleanCommand;
 
 class Kernel extends ConsoleKernel
@@ -17,6 +19,8 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         ImportSetorialCommand::class,
+        ImportIndicesCommand::class,
+        ImportEmpresasIndicesCommand::class,
         CacheCleanCommand::class
     ];
 

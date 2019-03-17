@@ -14,16 +14,14 @@ class CreateTableAtivos extends Migration
     public function up()
     {
         Schema::create('ativos', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id');            
+            $table->unsignedInteger('tipo_id')->nullable();
             $table->unsignedInteger('empresa_id');
-            $table->string('sigla', 8);
-            $table->unsignedInteger('created_by')->nullable();
-            $table->unsignedInteger('updated_by')->nullable();
+            $table->string('codigo', 8);
             $table->timestamps();
 
+            $table->foreign('tipo_id')->references('id')->on('tipos_ativos');
             $table->foreign('empresa_id')->references('id')->on('empresas');
-            $table->foreign('created_by')->references('id')->on('users');
-            $table->foreign('updated_by')->references('id')->on('users');
         });
     }
 

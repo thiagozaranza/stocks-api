@@ -30,4 +30,9 @@ class Empresa extends Model
     {
         return $this->belongsTo('App\Models\Segmento');
     }
+
+    public function ativos()
+    {
+        return $this->hasMany('App\Models\Ativo');
+    }
 }

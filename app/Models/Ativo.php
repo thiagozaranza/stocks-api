@@ -8,7 +8,7 @@ class Ativo extends Model
 {
     protected $table = 'ativos';
 
-    public $fillable = ['tipo_id', 'empresa_id', 'nome', 'codigo'];
+    public $fillable = ['tipo_id', 'empresa_id', 'codigo'];
     public $hidden = ['created_at', 'updated_at'];
 
     public function tipo()

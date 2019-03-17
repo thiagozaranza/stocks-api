@@ -22,6 +22,7 @@ Route::prefix('rest')->group(function () {
     Route::resource('subsetor', 'Rest\\SubsetorController');
     Route::resource('segmento', 'Rest\\SegmentoController');
     Route::resource('indice',   'Rest\\IndiceController');
+    Route::resource('ativo',    'Rest\\AtivoController');
 });
 
 Auth::routes();

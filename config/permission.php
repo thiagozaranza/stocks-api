@@ -29,6 +29,7 @@ return [
             App\Models\Segmento::class              => ['Create', 'Update', 'Delete'],  
             App\Models\Empresa::class               => ['Create', 'Update', 'Delete'],  
             App\Models\Indice::class                => ['Create', 'Update', 'Delete'], 
+            App\Models\Ativo::class                 => ['Create', 'Update', 'Delete'],
         ],
         'setorial_reader' => [
             App\Models\Setor::class                 => ['Read'],  
@@ -36,6 +37,7 @@ return [
             App\Models\Segmento::class              => ['Read'],  
             App\Models\Empresa::class               => ['Read'],  
             App\Models\Indice::class                => ['Read'],
+            App\Models\Ativo::class                 => ['Read']
         ],
     ],
 

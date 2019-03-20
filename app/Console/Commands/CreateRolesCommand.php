@@ -82,13 +82,13 @@ class CreateRolesCommand extends Command
 
         $user = User::findOrFail(1);
 
-        $user->removeRole('super_admin');
+        //$user->removeRole('super_admin');
 
-        if(!$user->hasRole('guest')) {
-            $this->info("Set guest role to user 1");
-            $user->assignRole('guest');
+        if(!$user->hasRole('super_admin')) {
+            $this->info("Set super_admin role to user 1");
+            $user->assignRole('super_admin');
         } else {
-            $this->info("User 1 already had guest role.");
+            $this->info("User 1 already had super_admin role.");
         }
 
         if ($user->can('Read App\\Models\\User'))

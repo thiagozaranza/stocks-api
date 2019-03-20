@@ -23,6 +23,11 @@ Route::prefix('rest')->group(function () {
     Route::resource('segmento', 'Rest\\SegmentoController');
     Route::resource('indice',   'Rest\\IndiceController');
     Route::resource('ativo',    'Rest\\AtivoController');
+
+    Route::resource('tesouro-categoria',    'Rest\\TesouroCategoriaController');
+    Route::resource('tesouro-tipo',         'Rest\\TesouroTipoController');
+    Route::resource('tesouro-titulo',       'Rest\\TesouroTituloController');
+    Route::resource('tesouro-cotacao',      'Rest\\TesouroCotacaoController');
 });
 
 Auth::routes();

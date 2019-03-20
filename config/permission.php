@@ -6,13 +6,17 @@ return [
             'guest' => [
                 'setorial_reader',
                 'auth_reader',
+                'tesouro_reader'
             ],
             'auth_admin' => [
                 'auth_reader'
             ],
             'setorial_admin' => [
                 'setorial_reader'
-            ]
+            ], 
+            'tesouro_admin' => [
+                'tesouro_reader'
+            ], 
         ]
     ],
 
@@ -39,6 +43,18 @@ return [
             App\Models\Indice::class                => ['Read'],
             App\Models\Ativo::class                 => ['Read']
         ],
+        'tesouro_admin' => [
+            App\Models\TesouroCategoria::class      => ['Create', 'Update', 'Delete'], 
+            App\Models\TesouroTipo::class           => ['Create', 'Update', 'Delete'], 
+            App\Models\TesouroTitulo::class         => ['Create', 'Update', 'Delete'], 
+            App\Models\TesouroCotacao::class        => ['Create', 'Update', 'Delete']
+        ],
+        'tesouro_reader' => [
+            App\Models\TesouroCategoria::class      => ['Read'], 
+            App\Models\TesouroTipo::class           => ['Read'], 
+            App\Models\TesouroTitulo::class         => ['Read'], 
+            App\Models\TesouroCotacao::class        => ['Read']
+        ], 
     ],
 
     'models' => [

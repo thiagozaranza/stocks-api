@@ -6,8 +6,32 @@ use Laravel\Passport\Passport;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
-use App\Models\{Setor, Segmento, Subsetor, Empresa, User, Indice, Ativo};
-use App\Policies\{SetorPolicy, SegmentoPolicy, SubsetorPolicy, EmpresaPolicy, UserPolicy, IndicePolicy, AtivoPolicy};
+use App\Models\{
+    User,
+    Setor,
+    Segmento,
+    Subsetor,
+    Empresa,
+    Indice,
+    Ativo,
+    TesouroCategoria,
+    TesouroTipo,
+    TesouroTitulo,
+    TesouroCotacao
+};
+use App\Policies\{
+    UserPolicy,
+    SetorPolicy,
+    SegmentoPolicy,
+    SubsetorPolicy,
+    EmpresaPolicy,
+    IndicePolicy,
+    AtivoPolicy,
+    TesouroCategoriaPolicy,
+    TesouroTipoPolicy,
+    TesouroTituloPolicy,
+    TesouroCotacaoPolicy
+};
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -17,13 +41,20 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
+        User::class                 => UserPolicy::class,
+
         Setor::class                => SetorPolicy::class,
         Segmento::class             => SegmentoPolicy::class,
         Subsetor::class             => SubsetorPolicy::class,
         Empresa::class              => EmpresaPolicy::class,
-        User::class                 => UserPolicy::class,
+        
         Indice::class               => IndicePolicy::class,
-        Ativo::class                => AtivoPolicy::class
+        Ativo::class                => AtivoPolicy::class,
+
+        TesouroCategoria::class     => TesouroCategoriaPolicy::class,
+        TesouroTipo::class          => TesouroTipoPolicy::class,
+        TesouroTitulo::class        => TesouroTituloPolicy::class,
+        TesouroCotacao::class       => TesouroCotacaoPolicy::class,
     ];
 
     /**

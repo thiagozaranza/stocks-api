@@ -11,8 +11,8 @@ class TesouroCategoria extends Model
     public $fillable = ['nome'];
     public $hidden = ['created_at', 'updated_at'];
 
-    public function tipo()
+    public function tipos()
     {
-        return $this->hasMany('App\Models\TesoutoTipo');
+        return $this->hasMany('App\Models\TesouroTipo', 'categoria_id', 'id');
     }
 }

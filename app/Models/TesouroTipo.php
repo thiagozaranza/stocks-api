@@ -18,6 +18,6 @@ class TesouroTipo extends Model
 
     public function titulos()
     {
-        return $this->hasMany('App\Models\TesouroTitulo');
+        return $this->hasMany('App\Models\TesouroTitulo', 'tipo_id', 'id');
     }
 }

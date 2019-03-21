@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class TesouroTitulo extends Model
+class TesouroCotacao extends Model
 {
     protected $table = 'tesourodireto_cotacoes';
 

@@ -16,7 +16,7 @@ class CreateTesourodiretoTitulosTable extends Migration
         Schema::create('tesourodireto_titulos', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('tipo_id');
-            $table->string('nome', 32);
+            $table->string('nome', 64);
             $table->date('data_inicio')->nullable();
             $table->date('data_vencimento');
 

@@ -9,6 +9,7 @@ use App\Console\Commands\ImportSetorialCommand;
 use App\Console\Commands\ImportIndicesCommand;
 use App\Console\Commands\ImportEmpresasIndicesCommand;
 use App\Console\Commands\CacheCleanCommand;
+use App\Console\Commands\ImportTesouroCommand;
 
 class Kernel extends ConsoleKernel
 {
@@ -21,7 +22,8 @@ class Kernel extends ConsoleKernel
         ImportSetorialCommand::class,
         ImportIndicesCommand::class,
         ImportEmpresasIndicesCommand::class,
-        CacheCleanCommand::class
+        CacheCleanCommand::class,
+        ImportTesouroCommand::class
     ];
 
     /**

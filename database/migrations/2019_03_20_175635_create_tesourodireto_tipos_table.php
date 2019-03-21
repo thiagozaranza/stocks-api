@@ -16,7 +16,8 @@ class CreateTesourodiretoTiposTable extends Migration
         Schema::create('tesourodireto_tipos', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('categoria_id');
-            $table->string('nome', 16);
+            $table->string('codigo', 16);
+            $table->string('nome', 32);
             $table->timestamps();
 
             $table->foreign('categoria_id')->references('id')->on('tesourodireto_categorias');

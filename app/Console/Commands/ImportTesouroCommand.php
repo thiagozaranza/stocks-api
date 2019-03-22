@@ -58,6 +58,9 @@ class ImportTesouroCommand extends Command
 
             $filename_parts = explode('_', $filename);
 
+            if (sizeof($filename_parts) < 2)
+                continue;
+
             $tipo       = $filename_parts[0];
             $vencimento = $filename_parts[1];
 
@@ -105,6 +108,10 @@ class ImportTesouroCommand extends Command
                 $preco_base     = str_replace(',', '.', str_replace('.', '', $line_parts[5]));
 
                 $data_parts = explode('/', $data);
+
+                if (sizeof($data_parts) != 3)
+                    continue;
+
                 $data = $data_parts[2].'-'.$data_parts[1].'-'.$data_parts[0];
 
                 $_cotacao = TesouroCotacao::where('titulo_id', $_titulo->id)->where('data', $data)->first();
@@ -114,11 +121,11 @@ class ImportTesouroCommand extends Command
                     $_cotacao = new TesouroCotacao();
                     $_cotacao->titulo_id    = $_titulo->id;
                     $_cotacao->data         = $data;
-                    $_cotacao->taxa_compra  = $taxa_compra;
-                    $_cotacao->taxa_venda   = $taxa_venda;
-                    $_cotacao->preco_compra = $preco_compra;
-                    $_cotacao->preco_venda  = $preco_venda;
-                    $_cotacao->preco_base   = $preco_base;
+                    $_cotacao->taxa_compra  = ($taxa_compra)? $taxa_compra : null;
+                    $_cotacao->taxa_venda   = ($taxa_venda)? $taxa_compra : null;
+                    $_cotacao->preco_compra = ($preco_compra)? $taxa_compra : null;
+                    $_cotacao->preco_venda  = ($preco_venda)? $taxa_compra : null;
+                    $_cotacao->preco_base   = ($preco_base)? $taxa_compra : null;
 
                     $_cotacao->save();
     

@@ -17,11 +17,11 @@ class CreateTesourodiretoCotacoesTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('titulo_id');
             $table->date('data');
-            $table->decimal('taxa_compra', 4, 2);
-            $table->decimal('taxa_venda', 4, 2);
-            $table->decimal('preco_compra', 7, 2);
-            $table->decimal('preco_venda', 7, 2);
-            $table->decimal('preco_base', 7, 2);
+            $table->decimal('taxa_compra', 4, 2)->nullable();
+            $table->decimal('taxa_venda', 4, 2)->nullable();
+            $table->decimal('preco_compra', 7, 2)->nullable();
+            $table->decimal('preco_venda', 7, 2)->nullable();
+            $table->decimal('preco_base', 7, 2)->nullable();
 
             $table->timestamps();
 

@@ -60,13 +60,13 @@ class CreateRolesCommand extends Command
                 $role = Role::create(['name' => $role]);
             }
 
-            $this->warn($role->name);
+            //$this->warn($role->name);
 
             $role_permissions = [];
 
             foreach ($_permissions as $_permission) {
 
-                $this->info($_permission);
+                //$this->info($_permission);
 
                 try {
                     $role_permission = Permission::findByName($_permission);
@@ -90,11 +90,6 @@ class CreateRolesCommand extends Command
         } else {
             $this->info("User 1 already had super_admin role.");
         }
-
-        if ($user->can('Read App\\Models\\User'))
-            $this->info("Yes, he can");
-        else     
-            $this->info("No, he can't");
     }
 
     private function getPermissionsForRole(&$permissions, &$roles, $node)

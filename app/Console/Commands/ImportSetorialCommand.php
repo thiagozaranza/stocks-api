@@ -42,6 +42,8 @@ class ImportSetorialCommand extends Command
      */
     public function handle()
     {
+        $this->alert($this->signature);
+
         $lines = file('/var/www/files/Setorial30012019.csv');
 
         $content = '';
@@ -70,7 +72,7 @@ class ImportSetorialCommand extends Command
                 $_setor->nome = $setor;
                 $_setor->save();
 
-                $this->info("  - " . $setor);
+                //$this->info("  - " . $setor);
             }
 
             $_subsetor = Subsetor::where('nome', $subsetor)->where('setor_id', $_setor->id)->first();
@@ -81,7 +83,7 @@ class ImportSetorialCommand extends Command
                 $_subsetor->setor_id = $_setor->id;
                 $_subsetor->save();
 
-                $this->info("    - " . $subsetor);
+                //$this->info("    - " . $subsetor);
             }
 
             $_segmento = Segmento::where('nome', $segmento)->where('subsetor_id', $_subsetor->id)->first();
@@ -92,7 +94,7 @@ class ImportSetorialCommand extends Command
                 $_segmento->subsetor_id = $_subsetor->id;
                 $_segmento->save();
 
-                $this->info("      - " . $segmento);
+                //$this->info("      - " . $segmento);
             }
 
             $_empresa = Empresa::where('nome', $nome)->first();
@@ -106,7 +108,7 @@ class ImportSetorialCommand extends Command
 
                 $_empresa->save();
 
-                $this->info("        - " . $nome);
+                //$this->info("        - " . $nome);
             }
         }
     }

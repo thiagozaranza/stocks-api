@@ -42,6 +42,8 @@ class ImportTesouroCommand extends Command
      */
     public function handle()
     {
+        $this->alert($this->signature);
+        
         $this->importCategorias();
         $this->importTipos();
         $this->importHistorico();
@@ -87,7 +89,7 @@ class ImportTesouroCommand extends Command
                 $_titulo->tipo_id = $_tipo->id;
                 $_titulo->save();
 
-                $this->info("Título : " . $titulo_nome);
+                //$this->info("Título : " . $titulo_nome);
             }
 
             $lines = file($path . $filename);
@@ -129,7 +131,7 @@ class ImportTesouroCommand extends Command
 
                     $_cotacao->save();
     
-                    $this->info("Cotacao : " . $data . ' ' . $taxa_compra);
+                    //$this->info("Cotacao : " . $data . ' ' . $taxa_compra);
                 }
             }
         }
@@ -151,7 +153,7 @@ class ImportTesouroCommand extends Command
                 $_categoria->nome = $nome;
                 $_categoria->save();
 
-                $this->info("Categoria : " . $nome);
+                //$this->info("Categoria : " . $nome);
             }
         }
     }
@@ -191,7 +193,7 @@ class ImportTesouroCommand extends Command
                 $_tipo->categoria_id = $_categoria->id;
                 $_tipo->save();
 
-                $this->info("Tipo : " . $codigo);
+                //$this->info("Tipo : " . $codigo);
             }
         }
     }

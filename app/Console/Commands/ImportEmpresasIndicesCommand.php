@@ -41,6 +41,8 @@ class ImportEmpresasIndicesCommand extends Command
      */
     public function handle()
     {
+        $this->alert($this->signature);
+        
         $lines = file('/var/www/files/AcoesIndices-JanAbr-2019.csv');
 
         $indices = [];
@@ -117,7 +119,7 @@ class ImportEmpresasIndicesCommand extends Command
                     $ativo->empresa_id = $_empresa->id;
                     $ativo->save(); 
 
-                    $this->info($ativo->codigo);
+                    //$this->info($ativo->codigo);
                 }
                 
             }
@@ -226,7 +228,7 @@ class ImportEmpresasIndicesCommand extends Command
 
         if (!$_indice->ativos()->get()->contains($_ativo)) {
             $_indice->ativos()->attach($_ativo->id);    
-            $this->info($_ativo->codigo . ' attached on ' . $_indice->codigo);
+            //$this->info($_ativo->codigo . ' attached on ' . $_indice->codigo);
         }
     }
 }

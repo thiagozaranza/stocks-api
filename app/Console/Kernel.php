@@ -10,6 +10,7 @@ use App\Console\Commands\ImportIndicesCommand;
 use App\Console\Commands\ImportEmpresasIndicesCommand;
 use App\Console\Commands\CacheCleanCommand;
 use App\Console\Commands\ImportTesouroCommand;
+use App\Console\Commands\ImportDadosCommand;
 
 class Kernel extends ConsoleKernel
 {
@@ -23,7 +24,8 @@ class Kernel extends ConsoleKernel
         ImportIndicesCommand::class,
         ImportEmpresasIndicesCommand::class,
         CacheCleanCommand::class,
-        ImportTesouroCommand::class
+        ImportTesouroCommand::class,
+        ImportDadosCommand::class
     ];
 
     /**

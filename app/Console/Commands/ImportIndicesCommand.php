@@ -40,6 +40,8 @@ class ImportIndicesCommand extends Command
      */
     public function handle()
     {
+        $this->alert($this->signature);
+        
         $lines = file('/var/www/files/Indices20190314.csv');
 
         $content = '';
@@ -67,7 +69,7 @@ class ImportIndicesCommand extends Command
                 $_indice->titulo =$titulo;
                 $_indice->save();
 
-                $this->info($nome . " - " . $titulo);
+                //$this->info($nome . " - " . $titulo);
             }
         }
     }
